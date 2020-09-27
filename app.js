@@ -11,6 +11,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
+
 app.post("/column", (req, res, next) => {
     const column = req.body.column;
     const token = req.body.token;
@@ -49,6 +50,9 @@ app.get("/start", (req, res, next) => {
   
 });
 
+app.use('/',(req,res,next)=>{
+    res.end();
+})
 
 app.listen(process.env.PORT || 3030);
     
