@@ -5,6 +5,7 @@ const path = require('path');
 const newGame = require("./model/connect4");
 const dataFile = path.join(__dirname, ".", "model","jsonData.json");
 
+
 const connect4Controller = require("./controller/connect4");
 const app = express();
 
@@ -49,6 +50,6 @@ app.get("/start", (req, res, next) => {
 });
 
 
-app.listen(3030);
+app.listen(process.env.PORT || 3030);
     
     
